@@ -5,6 +5,7 @@
 }
 
 .contenedor-juego{
+    height:100vh;
     max-width: 1250px;
     display: flex;
     flex-direction: column;
@@ -19,7 +20,6 @@
 }
 
 .juego-cuadricula{
-    width:9rem;
     display: grid;
     grid-template-columns: auto auto auto;
     gap:0;
