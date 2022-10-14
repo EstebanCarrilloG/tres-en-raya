@@ -8,6 +8,7 @@ const juego_btn = document.getElementById("juego-boton")
 var i = 1;
 const jBtn_e =  "pointer-events:initial;opacity:initial;",
       jBtn_d =  "pointer-events:none;opacity:40%;";
+let state = false;
 
 var pWin = [ [0,1,2],[3,4,5],[6,7,8],
              [0,3,6],[1,4,7],[2,5,8],
@@ -19,14 +20,17 @@ function comprobar(){
   for (var j = 0; j < pWin.length;j++){
     if(cuadro_btn[pWin[j][0]].innerHTML === "X" && cuadro_btn[pWin[j][1]].innerHTML === "X" && cuadro_btn[pWin[j][2]].innerHTML === "X" ){
       info.innerHTML = '"X" Gana';
+      state = true;
       deshabilitarCasillas();
     }else if(cuadro_btn[pWin[j][0]].innerHTML === "O" && cuadro_btn[pWin[j][1]].innerHTML === "O" && cuadro_btn[pWin[j][2]].innerHTML === "O"){
       info.innerHTML = '"O" Gana';
+      state = true;
       deshabilitarCasillas();
-    }else if(cuadro_btn[0].innerHTML != "" && cuadro_btn[1].innerHTML != "" && cuadro_btn[2].innerHTML != "" && cuadro_btn[3].innerHTML !== "" && cuadro_btn[4].innerHTML != "" && cuadro_btn[5].innerHTML != "" && cuadro_btn[6].innerHTML != "" && cuadro_btn[7].innerHTML != "" && cuadro_btn[8].innerHTML != ""){
-      info.innerHTML = "Empate";
-      deshabilitarCasillas(false);
     }
+  }
+  if(cuadro_btn[0].innerHTML != "" && cuadro_btn[1].innerHTML != "" && cuadro_btn[2].innerHTML != "" && cuadro_btn[3].innerHTML !== "" && cuadro_btn[4].innerHTML != "" && cuadro_btn[5].innerHTML != "" && cuadro_btn[6].innerHTML != "" && cuadro_btn[7].innerHTML != "" && cuadro_btn[8].innerHTML != "" && state == false){
+    info.innerHTML = "Empate";
+    deshabilitarCasillas(false);
   }
     
 }
@@ -61,6 +65,7 @@ juego_btn.onclick = function(){
   for(var n_boton = 0; n_boton < cuadro_btn.length; n_boton++){    
     cuadro_btn[n_boton].style.cssText = "pointer-events:initial;";
     cuadro_btn[n_boton].innerHTML = "";
+    state = false;
   }
   nEmpieza();
 }
