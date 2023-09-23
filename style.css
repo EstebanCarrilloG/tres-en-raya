@@ -1,66 +1,68 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.contenedor-juego{
-    height:100vh;
-    max-width: 1250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap:1rem;
-
+html {
+  font-size: 13px;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.contenedor-juego {
+  height: 100vh;
+  max-width: 78.125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
 }
 
-.juego-titulo, .juego-info{
-    text-align: center;
+.juego-titulo,
+.juego-info {
+  text-align: center;
 }
 
-.juego-cuadricula{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap:0;
+.juego-cuadricula {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 0;
 }
 
-.cuadro{
-    width:3rem;
-    height: 3rem;
-    border: 1px solid rgb(168, 168, 168);
-    text-align: center;
-    color:rgb(7, 255, 69);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    transition: background-color ease-in 0.2s;
+.cuadro {
+  width: 5rem;
+  height: 5rem;
+  border: 0.0625rem solid rgb(168, 168, 168);
+  text-align: center;
+  color: rgb(7, 255, 69);
+  font-size: 1.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  transition: background-color ease-in 0.2s;
 }
 
-.cuadro:hover{
-   
-    background-color:#cccc;
-    
+.cuadro:hover {
+  background-color: #cccc;
 }
 
-.juego-boton{
-    display:inline-flex;
-    padding: 1rem 1rem;
-    background:red ;
-    color: white;
-    cursor: pointer;
-    justify-content: center;
-    font-weight: bold;
-    transition:color ease-out 0.3s;
-   
+.juego-boton {
+  display: inline-flex;
+  padding: 1rem 1rem;
+  background: red;
+  color: white;
+  cursor: pointer;
+  justify-content: center;
+  font-weight: bold;
+  transition: color ease-out 0.3s;
 }
 
-.juego-boton:hover{
-  
-    background:white ;
-    color: red;
-    border: 1px solid red;
-   
+.juego-boton:hover {
+  background: white;
+  color: red;
+  border: 0.0625rem solid red;
 }
-
